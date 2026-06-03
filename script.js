@@ -35,10 +35,10 @@ const products = {
     price: '₦20,000',
     description: 'EAU DA PARFUME \n VAPORISTEUR-NATURAL SPRAY'
   },
-  'Rose Noir': {
-    image: 'Ashantee floral & far away 100ml 6k.jpeg',
-    price: '₦98',
-    description: 'Elegant rose with jasmine, amber and suede.'
+  'Ashantee fragrance 100ml': {
+    image: 'Ashantee fragrance 100ml 6k.jpeg',
+    price: '₦6,000',
+    description: 'Floral & Far Away '
   },
   'Angham by Lattafa 100ml': {
     image: 'Angham by lattafa 40k.jpeg',
