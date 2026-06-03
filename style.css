@@ -1,12 +1,12 @@
-﻿:root {
-  --bg: #f9f7f4;
+:root {
+  --bg: #eef6ff;
   --surface: rgba(255, 255, 255, 0.92);
   --surface-strong: #ffffff;
   --text: #111111;
-  --muted: #6d6d6d;
-  --accent: #b10d1e;
-  --accent-2: #ff724e;
-  --header-gradient: linear-gradient(135deg, #b10d1e 0%, #ff7e7e 45%, #f9e4db 100%);
+  --muted: #5f6f88;
+  --accent: #5f9cff;
+  --accent-2: #a3d4ff;
+  --header-gradient: linear-gradient(135deg, #5f9cff 0%, #9ccfff 45%, #e6f3ff 100%);
   --shadow: 0 28px 80px rgba(17, 17, 17, 0.08);
   --radius: 28px;
   --radius-sm: 18px;
@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #fff 0%, #f8f6f2 40%, #f1ece7 100%);
+  background: radial-gradient(circle at top, #f4faff 0%, #e7f2ff 40%, #e0ecfb 100%);
 }
 
 img {
@@ -176,13 +176,13 @@ button, input, a {
   overflow: hidden;
   display: grid;
   align-items: center;
-  background: radial-gradient(circle at top left, rgba(255,255,255,0.95), rgba(255,255,255,0.8) 35%), linear-gradient(140deg, rgba(177,13,30,0.14), rgba(255,255,255,0.65));
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.95), rgba(255,255,255,0.8) 35%), linear-gradient(140deg, rgba(95,156,255,0.14), rgba(255,255,255,0.65));
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(177,13,30,0.14), transparent 35%),
+  background: radial-gradient(circle at top right, rgba(95,156,255,0.14), transparent 35%),
     linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.6));
 }
 
