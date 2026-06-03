@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajoke Exclusive Scent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="topbar__inner container">
+        <div class="topbar__brand">Ajoke Exclusive Scent</div>
+        <div class="topbar__meta">
+          <a href="tel:+2349021570967" class="topbar__phone">Call 0902 157 0967</a>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar container" id="navbar">
+      <a href="#home" class="nav__logo">Ajoke</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="navMenu">
+        <a href="#home" data-filter="all">Home</a>
+        <a href="#productShowcase" data-filter="men">Men Perfume</a>
+        <a href="#productShowcase" data-filter="women">Women Perfume</a>
+        <a href="#productShowcase" data-filter="hot">Hot Sales</a>
+        <a href="#productShowcase" data-filter="combo">Combo Sales</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <a href="tel:+2349021570967" class="button button--ghost">Call</a>
+        <button class="button button--ghost cart-button" id="cartButton" type="button">
+          Cart <span class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero__overlay"></div>
+        <div class="container hero__content">
+          <div class="hero__details">
+            <p class="eyebrow">Luxury Fragrance</p>
+            <h1>Smell Luxury. Feel Confidence.</h1>
+            <p>Discover elegant scents designed for modern luxury and unforgettable moments.</p>
+            <div class="hero__actions">
+              <a href="#productShowcase" class="button button--primary" data-filter="all">Shop Now</a>
+              <a href="#contact" class="button button--secondary">Order on WhatsApp</a>
+            </div>
+            <div class="hero__meta">
+              <a href="tel:+2349021570967" class="button button--ghost">Call Now</a>
+              <span class="hero__tag">Complimentary gift packaging on every order</span>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="hero__card glass-card">
+              <h2>Rose Noir</h2>
+              <p>Velvet floral top notes with warm amber and soft musk to create a lasting impression.</p>
+              <div class="product-highlight__price">₦98,000</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-panel container">
+        <div class="search-panel__left">
+          <h2>Browse Exclusive Perfumes</h2>
+          <p>Fast navigation, elegant categories, and luxurious scents in a refined shopping experience.</p>
+        </div>
+        <div class="search-panel__right">
+          <input id="productSearch" type="search" placeholder="Search perfumes" aria-label="Search perfumes" />
+          <div class="filter-buttons" role="group" aria-label="Product categories">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="men">Men</button>
+            <button class="filter-button" data-filter="women">Women</button>
+            <button class="filter-button" data-filter="hot">Hot</button>
+            <button class="filter-button" data-filter="combo">Combo</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-showcase container" id="productShowcase">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Featured Collections</p>
+            <h2 id="productTitle">All Signature Scents</h2>
+            <p id="productSubtitle">A curated range of perfumes designed to inspire confidence, attraction, and luxury.</p>
+          </div>
+          <div class="sale-timer" id="saleTimer">
+            <span>Flash sale ends in</span>
+            <strong id="timerValue">04h 12m 23s</strong>
+          </div>
+        </div>
+
+        <div class="cart-summary hidden" id="cartSummary">
+          <div class="cart-summary__info">
+            <span class="eyebrow">Shopping Cart</span>
+            <strong id="cartItemCount">0 items in cart</strong>
+            <p id="cartItemsList">Add perfumes to your cart to order multiple items.</p>
+          </div>
+          <div class="cart-summary__actions">
+            <button class="button button--primary" id="whatsappCheckout" type="button">Checkout via WhatsApp</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="men">
+<!-- product image: breed my man oud 50ml 24k.jpeg -->
+            <div class="product-card__image">
+              <img src="breed my man oud 50ml 24k.jpeg" alt="Masculine perfume bottle" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Best Seller</span>
+              <h3>Breed my man oud 50ml.</h3>
+              <p>EAU DE PARFUME</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦24,000</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Breed my man oud 50ml.">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Breed my man oud 50ml.">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="men hot">
+<!-- product image: 24k bleu nuit 30ml 24k.jpeg -->
+            <div class="product-card__image">
+              <img src="24k bleu nuit 30ml 24k.jpeg" alt="Premium mens perfume" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Hot</span>
+              <h3>24k 30ml</h3>
+              <p>Bleu Nuit</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦3,000</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="24k 30ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="24k 30ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="men combo">
+<!-- product image: avant 100ml 20k.jpeg -->
+            <div class="product-card__image">
+              <img src="avant 100ml 20k.jpeg" alt="Luxury perfume for him" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__bWHEREadge badge--limited">Limited</span>
+              <h3>Avant 100ml</h3>
+              <p>EAU DA PARFUME <br> VAPORISTEUR-NATURAL SPRAY</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦20,000</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Avant 100ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Avant 100ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="women">
+<!-- product image: Ashantee floral & far away 100ml 6k.jpeg -->
+            <div class="product-card__image">
+              <img src="Ashantee floral & far away 100ml 6k.jpeg" alt="Feminine perfume bottle" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <h3>Rose Noir</h3>
+              <p>Elegant rose with jasmine, amber and suede.</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦98</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Rose Noir">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Rose Noir">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="women hot combo">
+<!-- product image: Angham by lattafa 40k.jpeg -->
+            <div class="product-card__image">
+              <img src="Angham by lattafa 40k.jpeg" alt="Luxury floral perfume" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Hot</span>
+              <h3>Angham by Lattafa 100ml</h3>
+              <p>Bright peony, saffron and powdery patchouli.</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦40,000</div>
+                <div class="product-fare"><span class="old-price">₦45,000</span><span class="save-badge">save 5,000</span></div>
+              </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Angham by Lattafa 100ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Angham by Lattafa 100ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="women">
+<!-- product image: coco vanilla 100ml 18k 39ml 6500.jpeg -->
+            <div class="product-card__image">
+              <img src="coco vanilla 100ml 18k 39ml 6500.jpeg" alt="Premium womens fragrance" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <h3>Coco Vanilla</h3>
+              <p>EAU DE PARFUME</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦100ml 18,000 <br>39ml ₦6,500</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Coco Vanilla">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Coco Vanilla">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="hot">
+<!-- product image: ramz smart collection 100ml 10k.jpeg -->
+            <div class="product-card__image">
+              <img src="ramz smart collection 100ml 10k.jpeg" alt="Hot seller perfume" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Best Seller</span>
+              <h3>Ramz Smart Collection</h3>
+              <p>EAU DE PARFUME <br> VAPORISTEUR-NATURAL SPRAY</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦10,000</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Ramz Smart Collection">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Ramz Smart Collection">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="hot">
+<!-- product image: tesori can 100ml 6500.jpeg -->
+            <div class="product-card__image">
+              <img src="tesori can 100ml 6500.jpeg" alt="Perfume hot sale" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge badge--limited">Limited</span>
+              <h3>Tesori D orinte 100ml</h3>
+              <p>AROMATIC PERFUME.</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦6,500</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Tesori D orinte 100ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Tesori D orinte 100ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="hot combo">
+<!-- product image: khamarah smart collection 100ml 10k.jpeg -->
+            <div class="product-card__image">
+              <img src="khamarah smart collection 100ml 10k.jpeg" alt="Exclusive perfume" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <h3>Khamarah Smart Collection</h3>
+              <p>EAU DE PARFUME <br> VAPORISTEUR-NATURAL SPRAY</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦10,000</div>
+                </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Khamarah Smart Collection">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Khamarah Smart Collection">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="combo">
+<!-- product image: 24k white 100ml 7k 30ml 3k.jpeg -->
+            <div class="product-card__image">
+              <img src="24k white 100ml 7k 30ml 3k.jpeg" alt="Perfume combo" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Bundle</span>
+              <h3>24k White 100ml</h3>
+              <p>EAU DE PARFUME</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦7,000 100ml <br> ₦3,000 30ml</div>
+                <div class="product-fare"><span class="old-price"></span>₦8,400<span class="save-badge">Save 15%</span></div>
+              </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="24k White 100ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="24k White 100ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="combo">
+<!-- product image: marshmallow collection 65ml 17K.jpeg -->
+            <div class="product-card__image">
+              <img src="marshmallow collection 65ml 17K.jpeg" alt="Luxury fragrance combo" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Bundle</span>
+              <h3>Marshmallow Collection 65ml</h3>
+              <p>Crimson Bloom + Amber Lace.</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦17,000</div>
+                <div class="product-fare"><span class="old-price">₦19,200</span><span class="save-badge">Save 16%</span></div>
+              </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Marshmallow Collection 65ml">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Marshmallow Collection 65ml">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="combo">
+<!-- product image: Layal oil perfume.jpeg -->
+            <div class="product-card__image">
+              <img src="Layal oil perfume.jpeg" alt="Fragrance bundle" />
+              <div class="quickview">Quick view</div>
+            </div>
+            <div class="product-card__info">
+              <span class="product-card__badge">Bundle</span>
+              <h3>Layal Oil Perfume</h3>
+              <p>GREEN, PINK, RED, BLUE</p>
+              <div class="product-card__meta">
+                <div class="product-card__price">₦1,500</div>
+                <div class="product-fare"><span class="old-price">₦1,700</span><span class="save-badge">Save 21%</span></div>
+              </div>
+              <div class="product-card__actions">
+                <button class="button button--ghost add-cart" data-product="Layal Oil Perfume">Add to Cart</button>
+                <button class="button button--outline whatsapp-link" data-message="Layal Oil Perfume">Order via WhatsApp</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials container" id="about">
+        <div class="section-intro">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Elegance celebrated by our customers</h2>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p>"A timeless fragrance collection that feels premium with every detail. Delivery was fast and beautifully wrapped."</p>
+            <div><strong>Amina S.</strong><span>CEO, Fashion House</span></div>
+          </article>
+          <article class="testimonial-card">
+            <p>"The scents feel tailor-made. I get compliments every time I wear Ajoke Exclusive Scent."</p>
+            <div><strong>Jade K.</strong><span>Luxury Stylist</span></div>
+          </article>
+          <article class="testimonial-card">
+            <p>"Smooth service and elegant packaging. The perfect gift for anyone who loves premium perfume."</p>
+            <div><strong>Faithia</strong><span>Entrepreneur</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="newsletter container">
+        <div class="newsletter__text">
+          <p class="eyebrow">Newsletter</p>
+          <h2>Stay updated with exclusive launches</h2>
+          <p>Receive early access to new scents, special deals, and VIP perks.</p>
+        </div>
+        <form class="newsletter__form">
+          <input type="email" placeholder="Enter your email address" aria-label="Email address" />
+          <button type="submit" class="button button--primary">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="contact container" id="contact">
+        <div class="contact__info">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's bring your perfect scent to life</h2>
+          <p>Have a question or need help selecting a fragrance? Reach out now for personalized support.</p>
+          <div class="contact__details">
+            <div><strong>Phone</strong><a href="tel:+2349021570967">+234 902 157 0967</a></div>
+            <div><strong>Email</strong><a href="mailto:hello@ajokeexclusive.com">hello@ajokeexclusive.com</a></div>
+            <div><strong>Address</strong><span>Luxury Avenue, Lagos</span></div>
+          </div>
+        </div>
+        <div class="contact__map glass-card">
+          <div class="map-placeholder">
+            <p>Shop your next scent.</p>
+            <span>WhatsApp orders open instantly.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <h3>Ajoke Exclusive Scent</h3>
+          <p>Luxury perfumes curated for elegance, confidence, and unforgettable moments.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#home">Home</a>
+          <a href="#women">Women Perfume</a>
+          <a href="#men">Men Perfume</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__contact">
+          <p>0902 157 0967</p>
+          <p>hello@ajokeexclusive.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <a class="whatsapp-float" href="#" id="whatsappFloat" aria-label="Chat on WhatsApp">
+      <span>WhatsApp</span>
+    </a>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="product-modal hidden">
+      <div class="product-modal__overlay"></div>
+      <div class="product-modal__content">
+        <button id="modalClose" class="modal-close" aria-label="Close product details">×</button>
+        <div class="product-modal__grid">
+          <div class="product-modal__image">
+            <img id="modalImage" src="" alt="Product image" />
+          </div>
+          <div class="product-modal__info">
+            <h2 id="modalProductName"></h2>
+            <p id="modalProductDescription"></p>
+            <div class="product-modal__price" id="modalProductPrice"></div>
+            <div class="product-modal__actions">
+              <button id="modalWhatsappBtn" class="button button--primary">Order via WhatsApp</button>
+              <button id="modalAddCartBtn" class="button button--ghost">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
+
+
+
+
