@@ -4,9 +4,9 @@
   --surface-strong: #ffffff;
   --text: #111111;
   --muted: #5f6f88;
-  --accent: #5f9cff;
-  --accent-2: #a3d4ff;
-  --header-gradient: linear-gradient(135deg, #5f9cff 0%, #9ccfff 45%, #e6f3ff 100%);
+  --accent: #3f6fd1;
+  --accent-2: #7ab2ff;
+  --header-gradient: linear-gradient(135deg, #3f6fd1 0%, #739cea 45%, #e6f3ff 100%);
   --shadow: 0 28px 80px rgba(17, 17, 17, 0.08);
   --radius: 28px;
   --radius-sm: 18px;
@@ -59,10 +59,43 @@ button, input, a {
 }
 
 .topbar__brand {
+  display: flex;
+}
+
+.topbar__brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.topbar__logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  padding: 0.35rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.topbar__brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: #ffffff;
+}
+
+.topbar__brand-tagline {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  font-style: italic;
 }
 
 .topbar__meta {
@@ -189,7 +222,8 @@ button, input, a {
 .hero__content {
   position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 2rem;
   align-items: center;
   min-height: 75vh;
@@ -197,8 +231,9 @@ button, input, a {
 }
 
 .hero__details {
-  max-width: 560px;
+  max-width: 640px;
   z-index: 1;
+  text-align: center;
 }
 
 .eyebrow {
@@ -223,22 +258,33 @@ button, input, a {
   font-size: clamp(3rem, 4vw, 4.4rem);
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 .hero__details p {
   max-width: 580px;
-  margin: 0 0 2rem;
+  margin: 0 0 3rem;
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.8;
+  white-space: nowrap;
 }
 
 .hero__actions,
 .hero__meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.9rem;
   align-items: center;
+  justify-content: center;
+}
+
+.hero__meta {
+  margin-top: 1rem;
+}
+
+.hero__actions {
+  flex-wrap: nowrap;
 }
 
 .hero__tag {
