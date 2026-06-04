@@ -21,64 +21,89 @@ let cartItems = [];
 // Product database with images and details
 const products = {
   'Breed my man oud 50ml.': {
-    image: 'breed my man oud 50ml 24k.jpeg',
+    image: 'breed-my-man-oud-50ml-24k.jpeg',
     price: '₦24,000',
     description: 'EAU DE PARFUME'
   },
   '24k 30ml': {
-    image: '24k bleu nuit 30ml 24k.jpeg',
+    image: '24k-bleu-nuit-30ml-24k.jpeg',
     price: '₦3,000',
     description: 'Bleu Nuit'
   },
   'Avant 100ml': {
-    image: 'avant 100ml 20k.jpeg',
+    image: 'avant-100ml-20k.jpeg',
     price: '₦20,000',
     description: 'EAU DA PARFUME \n VAPORISTEUR-NATURAL SPRAY'
   },
   'Ashantee fragrance 100ml': {
-    image: 'Ashantee fragrance 100ml 6k.jpeg',
+    image: 'ashantee-floral-and-far-away-100ml-6k.jpeg',
     price: '₦6,000',
     description: 'Floral & Far Away '
   },
   'Angham by Lattafa 100ml': {
-    image: 'Angham by lattafa 40k.jpeg',
+    image: 'angham-by-lattafa-40k.jpeg',
     price: '₦40,000',
     description: 'Bright peony, saffron and powdery patchouli.'
   },
   'Coco Vanilla': {
-    image: 'coco vanilla 100ml 18k 39ml 6500.jpeg',
+    image: 'coco-vanilla-100ml-18k-39ml-6500.jpeg',
     price: '₦100ml 18,000 / 39ml ₦6,500',
     description: 'EAU DE PARFUME'
   },
   'Ramz Smart Collection': {
-    image: 'ramz smart collection 100ml 10k.jpeg',
+    image: 'ramz-smart-collection-100ml-10k.jpeg',
     price: '₦10,000',
     description: 'EAU DE PARFUME \n VAPORISTEUR-NATURAL SPRAY'
   },
   'Tesori D orinte 100ml': {
-    image: 'tesori can 100ml 6500.jpeg',
+    image: 'tesori-can-100ml-6500.jpeg',
     price: '₦6,500',
     description: 'AROMATIC PERFUME.'
   },
   'Khamarah Smart Collection': {
-    image: 'khamarah smart collection 100ml 10k.jpeg',
+    image: 'khamarah-smart-collection-100ml-10k.jpeg',
     price: '₦10,000',
     description: 'EAU DE PARFUME \n VAPORISTEUR-NATURAL SPRAY'
   },
   '24k White 100ml': {
-    image: '24k white 100ml 7k 30ml 3k.jpeg',
+    image: '24k-white-100ml-7k-30ml-3k.jpeg',
     price: '₦7,000 100ml / ₦3,000 30ml',
     description: 'EAU DE PARFUME'
   },
   'Marshmallow Collection 65ml': {
-    image: 'marshmallow collection 65ml 17K.jpeg',
+    image: 'marshmallow-collection-65ml-17k.jpeg',
     price: '₦17,000',
     description: 'Crimson Bloom + Amber Lace.'
   },
   'Layal Oil Perfume': {
-    image: 'Layal oil perfume.jpeg',
+    image: 'layal-oil-perfume.jpeg',
     price: '₦1,500',
     description: 'GREEN, PINK, RED, BLUE'
+  },
+  'Hayaaty by Official 300ml': {
+    image: 'hayaaty.jpeg',
+    price: '₦6,500',
+    description: 'Signature body mist with floral depth.'
+  },
+  'Monogotas Body Mist 100ml': {
+    image: 'monogotas-100ml-body-mist-4k.jpeg',
+    price: '₦4,000',
+    description: 'Fresh body mist for long-lasting fragrance.'
+  },
+  'Juicy Crush Body Mist': {
+    image: 'juicy-crush-body-mist-2500.jpeg',
+    price: '₦2,500',
+    description: 'Sweet and fruity scent with juicy allure.'
+  },
+  'Hand Cream': {
+    image: 'hand-cream-1k.jpeg',
+    price: '₦1,000',
+    description: 'Creamy hand moisturizer for soft skin.'
+  },
+  'Enchanteur': {
+    image: 'enchantur-roll-on.jpeg',
+    price: '₦2,500',
+    description: 'Floral roll-on fragrance with luminous charm.'
   }
 };
 const categoryDetails = {
