@@ -102,6 +102,10 @@ const categoryDetails = {
     title: 'Combo Sales',
     subtitle: 'Curated bundle deals with extra savings and luxury pairing.',
   },
+  unisex: {
+    title: 'Unisex Scents',
+    subtitle: 'Balanced fragrances designed for everyone.',
+  },
 };
 
 function toggleMenu() {
@@ -124,6 +128,11 @@ function filterProducts(filter) {
     card.style.display = matchesCategory && matchesQuery ? 'grid' : 'none';
   });
   updateHeader(filter);
+  // show/hide the dedicated unisex section
+  const unisexSection = document.getElementById('unisex');
+  if (unisexSection) {
+    unisexSection.style.display = filter === 'unisex' ? 'block' : 'none';
+  }
 }
 
 function searchProducts() {

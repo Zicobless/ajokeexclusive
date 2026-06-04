@@ -324,7 +324,7 @@ button, input, a {
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   color: #1f1a18;
 }
 
@@ -387,6 +387,11 @@ button, input, a {
 
 .section-intro {
   padding: 4rem 0 1rem;
+}
+
+/* Hide unisex section on homepage by default; reveal when requested */
+#unisex {
+  display: none;
 }
 
 .section-intro h2 {
@@ -510,10 +515,11 @@ button, input, a {
 }
 
 .product-card__price {
-  font-weight: 800;
-  font-size: 1.3rem;
-  font-family: 'Playfair Display', serif;
-  color: #1b1310;
+  font-weight: 700;
+  font-size: 1.45rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.02em;
+  color: var(--accent);
 }
 
 .product-rating {
@@ -1037,8 +1043,10 @@ button, input, a {
 }
 
 .product-modal__price {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.03em;
   color: var(--accent);
   margin-bottom: 2rem;
 }
