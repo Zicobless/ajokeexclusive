@@ -13,7 +13,6 @@ const cartItemsList = document.getElementById('cartItemsList');
 const whatsappCheckout = document.getElementById('whatsappCheckout');
 const productTitle = document.getElementById('productTitle');
 const productSubtitle = document.getElementById('productSubtitle');
-const timerValue = document.getElementById('timerValue');
 
 const whatsappNumber = '2349021570967';
 let cartItems = [];
@@ -80,6 +79,21 @@ const products = {
     price: '₦1,500',
     description: 'GREEN, PINK, RED, BLUE'
   },
+  'Ameer Oudh Spray 50ml': {
+    image: 'ameer oudh spray 50ml ameer perfume 13,500 combo.jpg',
+    price: '₦13,500',
+    description: 'Ameer perfume combo'
+  },
+  'Asad Bourbon + Hayaaty 50ml': {
+    image: 'asad bourbon 50ml, 50ml hayaaty (blue) 16k combo.jpg',
+    price: '₦16,000',
+    description: 'Dual fragrance combo pack'
+  },
+  'Mosuf Brown Combo': {
+    image: 'mosuf brown 50ml, naseem oil 24ml, riggs body spray 200ml 14,500 combo.jpg',
+    price: '₦14,500',
+    description: 'Perfume, oil, and body spray bundle'
+  },
   'Hayaaty by Official 300ml': {
     image: 'hayaaty.jpeg',
     price: '₦6,500',
@@ -104,6 +118,87 @@ const products = {
     image: 'enchantur-roll-on.jpeg',
     price: '₦2,500',
     description: 'Floral roll-on fragrance with luminous charm.'
+  }
+  ,
+  '24k Series Black, White, Red': {
+    image: '24k series black, white, red 100ml 7k.jpg',
+    price: '₦7,000',
+    description: '24k series bundle.'
+  },
+  '9PM Black Elixr Rebel 50ml': {
+    image: '9pm black,elixr, rebel 50ml 10k.jpg',
+    price: '₦10,000',
+    description: 'Masculine bold scent.'
+  },
+  'Active Woman 80ml': {
+    image: 'active woman 80ml 14k.jpg',
+    price: '₦14,000',
+    description: 'Vibrant feminine fragrance.'
+  },
+  'Breed My Man 50ml': {
+    image: 'breed-my-man-50ml-25k.jpeg',
+    price: '₦25,000',
+    description: 'Premium men fragrance.'
+  },
+  'Confetti Spray + Hand Cream': {
+    image: 'confetti spray 200ml hand cream   combo.jpg',
+    price: 'Price on request',
+    description: 'Bundle: confetti spray and hand cream.'
+  },
+  'Confetti + Naseem + Pistachio': {
+    image: 'confetti spray 200ml, naseem oil 24ml, pistachio crush 12,500 combo.jpg',
+    price: '₦12,500',
+    description: 'Triple bundle.'
+  },
+  'Cosmo Roll On': {
+    image: 'cosmo roll on 3,500.jpg',
+    price: '₦3,500',
+    description: 'Compact roll-on fragrance.'
+  },
+  'Hannah Secret 100ml': {
+    image: 'hannah secret 100ml 8k.jpg',
+    price: '₦8,000',
+    description: 'Delicate and lasting scent.'
+  },
+  'Interesting She 50ml': {
+    image: 'interesting she 50ml 5k.jpg',
+    price: '₦5,000',
+    description: 'Playful feminine fragrance.'
+  },
+  'Kaly 50ml': {
+    image: 'kaly 50ml 11k.jpg',
+    price: '₦11,000',
+    description: 'Elegant scent for evenings.'
+  },
+  'Men Premium': {
+    image: 'men 33k.jpg',
+    price: '₦33,000',
+    description: 'High-end men fragrance.'
+  },
+  'Mosuf Spray + Oil + Perfume': {
+    image: 'mosuf spray 200ml, mosuf oil 5ml, 50ml mosuf perfume 10,500.jpg',
+    price: '₦10,500',
+    description: 'Complete Mosuf bundle.'
+  },
+  'Official Crystal Series 35ml': {
+    image: 'official crystal series 35ml 5k.jpg',
+    price: '₦5,000',
+    description: 'Crystal series roll-on.'
+  },
+  'Uploaded Scent Image 1': {
+    image: 'WhatsApp Image 2026-06-05 at 5.55.07 PM.jpeg',
+    price: 'Ask',
+    description: 'New uploaded scent image.'
+  },
+  'Uploaded Scent Image 2': {
+    image: 'WhatsApp Image 2026-06-05 at 5.55.08 PM (1).jpeg',
+    price: 'Ask',
+    description: 'New uploaded scent image.'
+  },
+  'Uploaded Scent Image 3': {
+    image: 'WhatsApp Image 2026-06-05 at 5.55.08 PM.jpeg',
+    price: 'Ask',
+    description: 'New uploaded scent image.'
   }
 };
 const categoryDetails = {
@@ -144,24 +239,113 @@ function updateHeader(filter) {
 }
 
 function filterProducts(filter) {
-  const query = productSearch.value.toLowerCase().trim();
-  filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
-  productCards.forEach(card => {
-    const categories = card.dataset.category.split(' ');
-    const matchesCategory = filter === 'all' || categories.includes(filter);
-    const matchesQuery = !query || card.textContent.toLowerCase().includes(query);
-    card.style.display = matchesCategory && matchesQuery ? 'grid' : 'none';
+  const query = productSearch?.value.toLowerCase().trim() || '';
+  
+  // Update active nav buttons with highlight
+  navFilterLinks.forEach(link => {
+    if (link.dataset.filter === filter) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
   });
-  updateHeader(filter);
-  // show/hide the dedicated unisex section
-  const unisexSection = document.getElementById('unisex');
-  if (unisexSection) {
-    unisexSection.style.display = filter === 'unisex' ? 'block' : 'none';
+  
+  // Get all category sections
+  const womenSection = document.getElementById('womenSection');
+  const menSection = document.getElementById('menSection');
+  const unisexSection = document.getElementById('unisexSection');
+  const comboSection = document.getElementById('comboSection');
+  const homeGallery = document.getElementById('homeGallery');
+  const searchPanel = document.querySelector('.search-panel');
+  
+  // Get all sections
+  const allSections = [womenSection, menSection, unisexSection, comboSection];
+  
+  // HOME: Show all products from all categories
+  if (filter === 'all') {
+    // Hide search panel on home
+    if (searchPanel) searchPanel.style.display = 'none';
+    
+    // Show home gallery with all products
+    if (homeGallery) {
+      homeGallery.style.display = 'block';
+      homeGallery.classList.remove('section-hidden');
+    }
+    
+    // Hide all individual category sections
+    allSections.forEach(section => {
+      if (section) {
+        section.style.display = 'none';
+        section.classList.add('section-hidden');
+      }
+    });
+    
+    // Show all products in home gallery
+    const allHomeProducts = homeGallery?.querySelectorAll('[data-category]');
+    allHomeProducts?.forEach((card, index) => {
+      card.style.display = '';
+      card.classList.remove('hidden');
+      setTimeout(() => card.classList.add('fade-in'), index * 15);
+    });
+  } 
+  // CATEGORY SPECIFIC: Show only the selected category
+  else {
+    // Show search panel on category pages
+    if (searchPanel) searchPanel.style.display = 'grid';
+    
+    // Hide home gallery
+    if (homeGallery) {
+      homeGallery.style.display = 'none';
+      homeGallery.classList.add('section-hidden');
+    }
+    
+    // Hide all sections first
+    allSections.forEach(section => {
+      if (section) {
+        section.style.display = 'none';
+        section.classList.add('section-hidden');
+      }
+    });
+    
+    // Show only the selected category section
+    let activeSection = null;
+    if (filter === 'women' && womenSection) {
+      activeSection = womenSection;
+    } else if (filter === 'men' && menSection) {
+      activeSection = menSection;
+    } else if (filter === 'unisex' && unisexSection) {
+      activeSection = unisexSection;
+    } else if (filter === 'combo' && comboSection) {
+      activeSection = comboSection;
+    }
+    
+    if (activeSection) {
+      activeSection.style.display = 'block';
+      activeSection.classList.remove('section-hidden');
+      
+      // Animate products in the active section
+      const products = activeSection.querySelectorAll('[data-category]');
+      products.forEach((card, index) => {
+        const matchesQuery = !query || card.textContent.toLowerCase().includes(query);
+        if (matchesQuery) {
+          card.style.display = '';
+          card.classList.remove('hidden');
+          setTimeout(() => card.classList.add('fade-in'), index * 15);
+        } else {
+          card.style.display = 'none';
+          card.classList.add('hidden');
+        }
+      });
+    }
   }
+  
+  updateHeader(filter);
 }
 
 function searchProducts() {
-  const currentFilter = Array.from(filterButtons).find(btn => btn.classList.contains('active'))?.dataset.filter || 'all';
+  // Get the currently active filter from nav links
+  const activeLink = Array.from(navFilterLinks).find(link => link.classList.contains('active'));
+  const currentFilter = activeLink?.dataset.filter || 'all';
   filterProducts(currentFilter);
 }
 
@@ -186,8 +370,6 @@ function openWhatsApp(message = '') {
       const product = products[message];
       if (product) {
         orderText += `Also include: *${message}* - ${product.price}\n${product.description}\n\n`;
-      } else {
-        orderText += `Also add: ${message}\n\n`;
       }
     }
   } else if (message) {
@@ -215,6 +397,11 @@ function showToast(message) {
   setTimeout(() => toast.remove(), 3000);
 }
 
+function updateHeader(filter) {
+  // No headers to update in new structure
+  return;
+}
+
 navToggle?.addEventListener('click', toggleMenu);
 
 filterButtons.forEach(button => {
@@ -229,15 +416,42 @@ filterButtons.forEach(button => {
 
 navFilterLinks.forEach(link => {
   link.addEventListener('click', event => {
+    event.preventDefault();
     const filter = link.dataset.filter;
     if (!filter) return;
-    if (filter !== 'all') {
-      filterProducts(filter);
+    
+    // Clear search
+    if (productSearch) {
       productSearch.value = '';
     }
-    const target = document.querySelector(link.getAttribute('href')) || document.body;
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (navMenu.classList.contains('open')) navMenu.classList.remove('open');
+    
+    // Apply filter
+    filterProducts(filter);
+    
+    // Scroll to appropriate section
+    let targetSection = null;
+    if (filter === 'all') {
+      targetSection = document.getElementById('homeGallery');
+    } else if (filter === 'unisex') {
+      targetSection = document.getElementById('unisexSection');
+    } else if (filter === 'combo') {
+      targetSection = document.getElementById('comboSection');
+    } else if (filter === 'women') {
+      targetSection = document.getElementById('womenSection');
+    } else if (filter === 'men') {
+      targetSection = document.getElementById('menSection');
+    }
+    
+    if (targetSection) {
+      setTimeout(() => {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+    
+    // Close mobile menu
+    if (navMenu && navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+    }
   });
 });
 
@@ -308,12 +522,18 @@ cartButton?.addEventListener('click', (event) => {
 
 // Add cart button using event delegation for dynamic buttons
 document.addEventListener('click', function (e) {
-  const button = e.target.closest('.add-cart');
+  const wlink = e.target.closest('.whatsapp-link');
+  if (wlink) {
+    e.preventDefault();
+    const msg = wlink.dataset.message || '';
+    openWhatsApp(msg);
+    return;
+  }
 
+  const button = e.target.closest('.add-cart');
   if (!button) return;
 
   const productName = button.dataset.product;
-
   if (!productName) return;
 
   if (!cartItems.includes(productName)) {
@@ -355,28 +575,51 @@ revealElements.forEach(el => {
   observer.observe(el);
 });
 
-function updateTimer() {
-  const now = new Date();
-  const end = new Date();
-  end.setHours(now.getHours() + 4);
-  const diff = end - now;
-  if (diff <= 0) return;
-  const hours = String(Math.floor(diff / 3600000)).padStart(2, '0');
-  const minutes = String(Math.floor(diff % 3600000 / 60000)).padStart(2, '0');
-  const seconds = String(Math.floor(diff % 60000 / 1000)).padStart(2, '0');
-  timerValue.textContent = `${hours}h ${minutes}m ${seconds}s`;
-}
+// Initialize on page load - show all products
+document.addEventListener('DOMContentLoaded', () => {
+  // Populate home gallery with all products from all categories
+  populateHomeGallery();
+  
+  // Show home by default
+  filterProducts('all');
+  
+  // Set Home as active on initial load
+  const homeLink = Array.from(navFilterLinks).find(link => link.dataset.filter === 'all');
+  if (homeLink) {
+    homeLink.classList.add('active');
+  }
+});
 
-setInterval(updateTimer, 1000);
-updateTimer();
+// Function to populate home gallery with all products
+function populateHomeGallery() {
+  const homeGallery = document.getElementById('homeGallery');
+  if (!homeGallery) return;
+  
+  const galleryGrid = homeGallery.querySelector('.gallery-grid');
+  if (!galleryGrid) return;
+  
+  // Get all products from category sections
+  const womenProducts = document.querySelectorAll('#womenSection .product-card');
+  const menProducts = document.querySelectorAll('#menSection .product-card');
+  const unisexProducts = document.querySelectorAll('#unisexSection .product-card');
+  const comboProducts = document.querySelectorAll('#comboSection .product-card');
+  
+  // Clear existing content
+  galleryGrid.innerHTML = '';
+  
+  // Clone and add all products to home gallery
+  const allProducts = [...womenProducts, ...menProducts, ...unisexProducts, ...comboProducts];
+  allProducts.forEach(product => {
+    const clone = product.cloneNode(true);
+    galleryGrid.appendChild(clone);
+  });
+}
 
 window.addEventListener('resize', () => {
   if (window.innerWidth > 960 && navMenu.classList.contains('open')) {
     navMenu.classList.remove('open');
   }
 });
-
-filterProducts('all');
 
 // Product Modal Functionality
 const productModal = document.getElementById('productModal');
